@@ -1,21 +1,31 @@
-import React, {useState} from 'react';
+import React, {useState, useEffect, Fragment} from 'react';
 import axios from 'axios';
 
 const Header = () => {
 
   const[answer, setAnswer] = useState([]);
 
-  axios.get('https://pokeapi.co/api/v2/pokemon/1')
-  // axios.get('https://www.freetogame.com/api/games')
-  .then(res => {
-    console.log(res)
-  })
-  .catch(err => console.error(err))
+  useEffect(() => {
+    axios.get('https://www.freetogame.com/api/games')
+    .then(res => {
+      setAnswer(res.data)
+    })
+    .catch(err => console.error(err))
+  },[])
+
+  console.log(answer)
 
   return(
-    <header>
-      <h2>Soy el Header</h2>
-    </header>
+    <Fragment>
+      {answer.map(ans => (
+
+        <section key={ans.id}>
+          <p>{ans.title}</p>
+          <h3>{ans.genre}</h3>
+        </section>
+
+      ))}
+    </Fragment>
   )
 };
 
