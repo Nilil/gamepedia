@@ -1,13 +1,19 @@
 import React, {Fragment} from 'react';
 
 import {Header} from '../components/Header';
+import {Gamecard} from '../components/Gamecard';
+import {Banner} from '../components/Banner';
+
+import {GamecardContainer} from '../containers/GamecardConatiner';
 
 const Home = () => {
   return(
     <Fragment>
       <Header/>
-      <h1>Gamepedia</h1>
-      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nobis consequuntur laborum autem velit error quis inventore impedit quae labore! Repudiandae iusto harum iste ipsam molestias. Home unde distinctio porro quaerat!</p>
+      <Banner/>
+      <GamecardContainer>
+        <Gamecard/>
+      </GamecardContainer>
     </Fragment>
   )
 };

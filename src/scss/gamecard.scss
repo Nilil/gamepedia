@@ -1,0 +1,12 @@
+.card {
+  &>a {
+    text-decoration: none;
+  }
+
+  &-text {
+    block-size: 35px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+}
