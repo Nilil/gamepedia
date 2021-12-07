@@ -1,30 +1,16 @@
-import React, {useState, useEffect, Fragment} from 'react';
-import axios from 'axios';
+import React, {Fragment} from 'react';
+import icons from '../assets/icons/icons';
 
 const Header = () => {
 
-  const[answer, setAnswer] = useState([]);
-
-  useEffect(() => {
-    axios.get('https://www.freetogame.com/api/games')
-    .then(res => {
-      setAnswer(res.data)
-    })
-    .catch(err => console.error(err))
-  },[])
-
-  console.log(answer)
-
   return(
     <Fragment>
-      {answer.map(ans => (
-
-        <section key={ans.id}>
-          <p>{ans.title}</p>
-          <h3>{ans.genre}</h3>
-        </section>
-
-      ))}
+      <header className="container">
+        <nav className="row d-flex align-items-center">
+          <img className="col-auto" src={icons[0].logo} alt={icons[0].description} />
+          <a className="col-auto">Gamepedia</a>
+        </nav>
+      </header>
     </Fragment>
   )
 };
