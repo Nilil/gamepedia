@@ -1,8 +1,11 @@
 import React, {useState, useEffect, Fragment} from 'react';
 import axios from 'axios';
 
+<<<<<<< HEAD
 import '../scss/gamecard.scss'
 
+=======
+>>>>>>> 750fdc342b305a8327e8d876e58d66597a055de5
 const Gamecard = () => {
 
   const[answer, setAnswer] = useState([]);
@@ -21,6 +24,7 @@ const Gamecard = () => {
     <Fragment>
       {answer.map(ans => (
 
+<<<<<<< HEAD
         <div className="card
         col-11 col-sm-5 col-lg-4 col-xl-3
         m-3"
@@ -39,6 +43,15 @@ const Gamecard = () => {
             </div> */}
           </div>
         </a>
+=======
+        <div className="card" key={ans.id} style={{width: '18rem'}}>
+          <img src={ans.thumbnail} className="card-img-top" alt="..." />
+          <div className="card-body">
+            <h5 className="card-title">{ans.title}</h5>
+            <p className="card-text">{ans.short_description}</p>
+            <a href="{ans.game_url}" className="btn btn-primary">Link</a>
+          </div>
+>>>>>>> 750fdc342b305a8327e8d876e58d66597a055de5
         </div>
 
 
